@@ -1,0 +1,6 @@
+name: Skills
+main: me.palotinhagostosa.skills.SkillsPlugin
+version: 1.0-SNAPSHOT
+
+authors: [Kurpfy]
+database: true

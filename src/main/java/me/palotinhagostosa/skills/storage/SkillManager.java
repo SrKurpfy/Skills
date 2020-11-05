@@ -1,6 +1,7 @@
 package me.palotinhagostosa.skills.storage;
 
 import me.palotinhagostosa.skills.model.Skill;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.reflections8.Reflections;
 
 import java.util.Collection;
@@ -19,11 +20,14 @@ public class SkillManager {
         this.skills = skills;
     }
 
-    public void registerSkills(String packageName) {
+    public void registerSkills(JavaPlugin plugin, String packageName) {
         final Reflections reflections = new Reflections(packageName);
         for (Class<? extends Skill> clazz : reflections.getSubTypesOf(Skill.class)) {
             try {
-                skills.add(clazz.newInstance());
+                final Skill skill = clazz.newInstance();
+
+                plugin.getServer().getPluginManager().registerEvents(skill, plugin);
+                skills.add(skill);
                 
             } catch (InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();

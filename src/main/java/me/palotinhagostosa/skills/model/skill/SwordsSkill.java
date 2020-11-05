@@ -1,6 +1,7 @@
 package me.palotinhagostosa.skills.model.skill;
 
 import me.palotinhagostosa.skills.SkillsPlugin;
+import me.palotinhagostosa.skills.event.UserExperienceGainedEvent;
 import me.palotinhagostosa.skills.model.Skill;
 import me.palotinhagostosa.skills.model.Skills;
 import me.palotinhagostosa.skills.model.User;
@@ -12,7 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class SwordsSkill implements Skill, Listener {
+public class SwordsSkill implements Skill {
 
     private static final SkillsPlugin PLUGIN = SkillsPlugin.getPlugin(SkillsPlugin.class);
 

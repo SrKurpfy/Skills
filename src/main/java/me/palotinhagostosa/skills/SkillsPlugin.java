@@ -31,7 +31,10 @@ public class SkillsPlugin extends JavaPlugin {
         viewFrame.register();
         viewFrame.addView(new SkillsView(this));
 
-        skillManager.registerSkills(getClass().getPackage() + ".model.skill");
+        skillManager.registerSkills(
+          this,
+          getClass().getPackage() + ".model.skill"
+        );
     }
 
     public UserManager getUserManager() {

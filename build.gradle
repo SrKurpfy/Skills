@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'me.palotinhagostosa'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'net.oneandone.reflections8:reflections8:0.11.7'
+    implementation 'com.github.DevNatan:inventory-framework:4c9a728d4b'
+    implementation 'com.github.SaiintBrisson.command-framework:bukkit:1.0.0'
+
+    compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+}
